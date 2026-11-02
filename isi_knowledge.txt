@@ -1,0 +1,97 @@
+# ISI knowledge base - edit freely.
+# Format: a line starting with "## " is the entry title, an optional "keywords:" line adds
+# search words (synonyms, alternative spellings), and the rest is the text the assistant will use.
+# Keep each entry short (under ~800 characters). Sources: isi.tn (2026), fr.wikipedia.org, universite.tn.
+# Last updated: 2 November 2026.
+
+## About ISI (overview)
+keywords: isi institut institute what who about overview history created founded creation decree 2001 public tunisia university school higher
+ISI stands for Institut Supérieur d'Informatique, the Higher Institute of Computer Science. It is a public computer science school in Ariana, Tunisia, part of the University of Tunis El Manar (UTM), under the Tunisian Ministry of Higher Education and Scientific Research. It was created by decree number 2001-1912 of 14 August 2001. ISI trains students in computer science and information technology: licence (bachelor), engineering, masters, and an integrated preparatory engineering cycle.
+
+## Location and contact
+keywords: address location located where map phone telephone call number fax email mail contact website web site facebook reach find ariana rue street
+ISI is located at 2 Rue Abou Raihane Bayrouni, 2080 Ariana, Tunisia. Phone: +216 71 706 164 (another listed number is 71 706 317). Fax: +216 71 706 698. Email: isi@isi.utm.tn (say it as: isi at isi dot U T M dot T N). Website: isi.tn (say it as: I S I dot T N). ISI also has an official Facebook page.
+
+## Departments
+keywords: department departments gtr geii glsi applied mathematics math networks telecommunications embedded software information systems
+ISI has four departments. GLSI, Génie Logiciel et Systèmes d'Information (software engineering and information systems), is a generalist department that trains engineers and licence students. GTR, Génie Télécommunications et Réseaux (telecommunications and networks); newer program pages call the networks department Administration Systèmes et Réseaux. GEII, Génie Électrique et Informatique Industrielle (electrical engineering and industrial computing), covers the embedded systems and connected objects engineers and the embedded systems licence. Mathématiques Appliquées is a multidisciplinary applied mathematics department.
+
+## Programs overview
+keywords: programs program formations formation offer offers cycles levels degrees study courses what can i study licence master engineer prepa
+ISI offers four kinds of programs: a licence (bachelor, Bac+3, 3 years) with four tracks; an engineering cycle (3 years after a licence) with three specialties; masters (Bac+5, 2 years) with one research master and four professional masters; and an integrated preparatory engineering cycle, a five-year engineering curriculum. The licence tracks are GLSI, RC, SECI and BioXplore. The engineering specialties are IDL, IDISC and ISEOC. The research master has two tracks, GL and SIIVA, and the four professional masters are SSII, MP2L, DLNT and SIIoT.
+
+## Licence programs (bachelor)
+keywords: licence license bachelor bac+3 undergraduate glsi rc seci bioxplore bioinformatics cybersecurity embedded double diploma villetaneuse iut sorbonne tracks
+The ISI licence is a national licence (LMD), Bac+3, 3 years or 6 semesters, with admission through the orientation of baccalaureate holders. For 2026 to 2030 ISI offers four tracks with a double diploma, one from ISI and UTM and one from the IUT de Villetaneuse (Université Sorbonne Paris Nord) in France. The tracks are: GLSI, software engineering and intelligent systems (software development, AI, data science); RC, networks and cybersecurity (infrastructure, cybersecurity, cloud, DevOps); SECI, connected and intelligent embedded systems (embedded systems, IoT, embedded AI); and BioXplore, bioinformatics and biological data exploration (genomics, data science for life sciences).
+
+## Engineering cycle overview
+keywords: engineering engineer ingenieur ingenieurs cycle diploma bac+6 concours competition exam admission three idl idisc iseoc national
+The ISI engineering cycle leads to the national engineering diploma in applied sciences and technologies (Bac+6) and lasts 3 years after a licence. Admission is by a national specific competitive exam, the concours, open to holders of a licence in computer science, business computing, networks or industrial computing. Master holders can apply directly to the second year. It ends with a final-year project (PFE) in a company. There are three specialties: IDL, IDISC and ISEOC. Certifications such as CCNA, LPIC and IBM Big Data are built into the curriculum depending on the specialty.
+
+## IDL engineering specialty (software)
+keywords: idl software development ingenierie logiciel data science machine learning cloud architect project manager glsi
+IDL, Ingénierie du Développement du Logiciel (software development engineering), belongs to the GLSI department. It covers software design, AI and data science, cloud architectures and distributed systems. Careers: software designer or architect, data scientist or machine learning engineer, IT project manager.
+
+## IDISC engineering specialty (networks)
+keywords: idisc infrastructures communication services networks 5g 4g cybersecurity cloud sdn voip devsecops ccna lpic network security
+IDISC, Ingénierie et Développement des Infrastructures et des Services de Communications, is the networks and systems specialty. It covers 4G and 5G mobile networks, cybersecurity, cloud and SDN virtualization, VoIP and DevSecOps, with CCNA, LPIC and IBM Big Data certifications. Careers: network and infrastructure architect, cybersecurity expert, cloud or DevSecOps engineer.
+
+## ISEOC engineering specialty (embedded systems and IoT)
+keywords: iseoc embedded systems connected objects iot robotics automation geii internet things
+ISEOC, Ingénierie des Systèmes Embarqués et Objets Connectés, belongs to the GEII department. It covers embedded systems, IoT, embedded AI, robotics and automation, from hardware design to real-time algorithm optimization. Careers: embedded systems engineer, IoT architect, embedded AI specialist.
+
+## Integrated preparatory cycle (5-year engineering)
+keywords: prepa preparatory integrated cycle five years 5 info-sup info-spe computer science computer engineering cti eur-ace accreditation accredited double diploma galilee polytech saclay paris-saclay dnisat
+The Cycle Prépa Intégrée en Informatique is a five-year engineering curriculum accredited by the CTI and EUR-ACE for 2024 to 2030. The first year is Info-Sup (mathematics, core computer science, engineering sciences), the second year is Info-Spé (pre-orientation), then students choose Computer Science (software engineering, AI and data science) or Computer Engineering (embedded systems and IoT, intelligent networks and cybersecurity). Double diploma options exist with Sup Galilée (Université Sorbonne Paris Nord) and Polytech Saclay (Université Paris-Saclay). It includes progressive internships and a 450-hour final project.
+
+## Research master
+keywords: research master recherche mastere doctorate phd gl siiva imaging vision artificial intelligence formal methods masters
+The research master (mastère de recherche en informatique) lasts 2 years or 4 semesters, in person at ISI, open to licence holders and engineering students. It prepares for a doctorate or R&D jobs and has two tracks: GL, Génie Logiciel (software engineering: formal methods, quality, architecture), and SIIVA, Systèmes Intelligents en Imagerie et Vision Artificielle (image processing, computer vision, applied AI).
+
+## Professional masters
+keywords: professional masters mastere professionnel ssii mp2l dlnt siiot security cybersecurity open source free software distance learning fad uvt auf ific eot iot
+ISI has four professional masters, each 2 years or 4 semesters, admission on file. SSII, Sécurité des Systèmes d'Information et des Infrastructures (security), in person at ISI or by distance learning with ISI and EOT. MP2L, Logiciels Libres or open source, distance learning with the Université Virtuelle de Tunis (UVT). DLNT, Développement Logiciel et Nouvelles Technologies (web, mobile, cloud), distance learning with AUF and IFIC. SIIoT, Systèmes Intelligents et IoT (connected objects, embedded AI, edge computing), distance learning with AUF and IFIC.
+
+## Admissions
+keywords: admission admit apply application register registration inscription concours results list calls candidates selection how enroll enrol requirement
+Admission paths: licence, through the orientation of baccalaureate holders. Engineering cycle, through the national specific concours for licence holders, with applications online on inscription.tn and direct second-year entry for master holders. Masters, by application file for holders of a licence in computer science or equivalent. For 2026/2027 there were several successive calls for the masters, and lists of admitted candidates are published in the news on isi.tn.
+
+## Research and laboratory
+keywords: research laboratory lab limtic siiva research day doctorate publications scientific council science
+ISI research is organized around the LIMTIC laboratory (Laboratoire de recherche en Informatique, Modélisation et Traitement de l'Information et de la Connaissance, code LR16ES06), which hosts teams such as SIIVA on intelligent systems in imaging and artificial vision. ISI has a scientific council and holds scientific events such as the ISI Research Day, whose third edition took place on 7 December 2022.
+
+## Student life and clubs
+keywords: student life clubs club activities sports sport associations association enactus securines freeways creative lab artbo geeks chess jci google codex ieee events
+ISI student life includes associations, sports activities and eleven clubs: Enactus, Securines, Freeways, Creative Lab, Artbo, Geeks, Chess Club, JCI, Google, Codex and IEEE. Each club has a student president and a teacher coach. ISI also hosts events such as ISI Entreprise, a quality day, workshops with companies and PFE internship preparation sessions.
+
+## Internships
+keywords: internship internships stage stages pfe company enterprise convention offers work professional training
+ISI has an internship service (service des stages) with internship offers, useful documents and internship agreements called conventions. Students do internships during their programs and a final-year project (PFE) in a company. In the integrated preparatory cycle internships start early and the PFE lasts 450 hours.
+
+## Services and facilities
+keywords: services library bibliotheque centre 4c career certification extranet portal facilities quality committee secretariat
+ISI services include a library, the Centre 4C (career and skills certification center), a quality committee, a general secretariat, and an extranet portal for students and staff.
+
+## Partnerships and international cooperation
+keywords: partnership partnerships cooperation international abroad france mobility exchange double diploma cnam uvt auf villetaneuse polytech faveod continuing education certificate
+ISI cooperates with French and international institutions: double diplomas with the IUT de Villetaneuse and Sup Galilée (Université Sorbonne Paris Nord) and with Polytech Saclay (Université Paris-Saclay); distance masters with the Université Virtuelle de Tunis, AUF and IFIC, and EOT; and company workshops. ISI also hosts a continuing-education certificate with the CNAM of France, Analyste en Cybersécurité (cybersecurity analyst), taught one day a week; the 2025 session started on 3 November 2025.
+
+## Size and numbers
+keywords: how many students number size teachers professors staff graduates statistics figures population big
+According to ISI's published statistics, the institute had about 1,254 students in 2020 to 2021. The ISI website shows counters for students, teachers, departments, clubs and graduates; for current exact numbers, check isi.tn.
+
+## The University of Tunis El Manar (UTM)
+keywords: utm university tunis el manar other schools enit fst faculty sciences medical
+ISI belongs to the University of Tunis El Manar (UTM), a public university in Tunis that also includes, among others, the National Engineering School of Tunis (ENIT), the Faculty of Sciences of Tunis and the Higher Institute of Medical Technologies of Tunis.
+
+## Latest news
+keywords: news latest recent announcement results admitted candidates list 2026 2027 call appel
+As of 7 October 2026, the news on isi.tn lists admission results for the 2026/2027 masters: several calls for the research master (up to the eighth call), plus lists for SSII (in person and distance learning), SIIoT and MDL. For anything newer, check isi.tn.
+
+## Information I do not have
+keywords: director dean head principal manager tuition fee fees cost price timetable schedule ranking salary opening hours open
+I do not have ISI's director's name, tuition fees, timetables, rankings or opening hours. For those, contact ISI by phone or email, or check isi.tn.
+
+## About this voice assistant
+keywords: assistant robot yourself you built made how work raspberry pi voice oled whisper gemma hardware
+I am a push-to-talk voice assistant running on a Raspberry Pi. I use Whisper to understand speech, a language model to think (Gemma running on the Pi by default), Google text to speech to talk, and a small OLED screen as my face.

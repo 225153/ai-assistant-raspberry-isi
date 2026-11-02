@@ -1,0 +1,23 @@
+# Python virtual environment and caches
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets - NEVER commit these
+.env
+*.env
+secrets*
+
+# Temporary audio files produced while testing
+*.wav
+*.mp3
+
+# Old experiment versions (version 4 contains an old API key - delete it, or keep it ignored)
+oledassistantversion*.py
+
+# Editors, OS and logs
+.vscode/
+.idea/
+.DS_Store
+*.log

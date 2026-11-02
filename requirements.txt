@@ -1,0 +1,7 @@
+numpy
+Pillow
+smbus2
+groq
+gTTS
+ollama
+evdev
