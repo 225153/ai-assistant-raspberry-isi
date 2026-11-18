@@ -6,7 +6,7 @@ It answers general questions like any chatbot, and it also knows about the **Ins
 
 ## Features
 
-- **Push-to-talk:** hold **E**, speak (up to 5 minutes), release. Press **E** again while it talks to interrupt it.
+- **Push-to-talk:** hold **E** on the keyboard **or** a physical push button on GPIO 17, speak (up to 5 minutes), release. Press again while it talks to interrupt it.
 - **Accurate speech recognition:** Whisper large-v3 (through Groq), forced to English, with audio cleanup.
 - **Streaming answers:** the answer is spoken sentence by sentence while it is still being written.
 - **Conversation memory:** remembers the last 6 exchanges. Say "new conversation" to reset it.
@@ -46,6 +46,7 @@ It answers general questions like any chatbot, and it also knows about the **Ins
 | USB microphone / USB sound card | tested with a Texas Instruments PCM2902 |
 | USB speaker | tested with a Jieli UACDemoV1.0 |
 | USB keyboard | for the push-to-talk key |
+| Push button (optional) | any normally-open momentary push button + 2 jumper wires, see [the button section](#optional-push-to-talk-button) |
 | Internet connection | for speech recognition and text to speech |
 
 **Accounts**
@@ -61,6 +62,52 @@ It answers general questions like any chatbot, and it also knows about the **Ins
 | SDA | Pin 3 (GPIO 2 / SDA) |
 | SCL | Pin 5 (GPIO 3 / SCL) |
 
+### Optional: push-to-talk button
+
+A physical button works **in addition to** the E key: holding either one records, and either one interrupts the answer. The program reads **GPIO 17** (physical pin 11) directly. The button connects that pin to ground when pressed, and the program starts listening.
+
+**What you need:** one normally-open momentary push button (a 4-leg tactile switch or a 2-wire panel button) and 2 jumper wires (male-to-female if the button is on a breadboard).
+
+**Do I need a resistor? No.** The Pi's built-in pull-up resistor is switched on by the program. An optional protection resistor is described below.
+
+| Button leg | Wire colour (convention) | Raspberry Pi pin |
+|---|---|---|
+| leg 1 | yellow (or green), the signal | **Pin 11 = GPIO 17** |
+| leg 2 | black, ground | **Pin 9 = GND** |
+
+Wire colours do not matter electrically; the convention is black for ground and any other colour for a signal. Avoid red, which usually means power. A button has no polarity. On a 4-leg tactile switch use two **diagonally opposite** legs (legs on the same side are connected inside). On a breadboard, the five holes of one numbered row on one side of the middle channel are linked, so plug each wire into the same row and side as its leg. If the program behaves as if the button is always pressed, turn the button 90 degrees.
+
+```
+ Raspberry Pi header (pins 1 to 12, seen with the USB ports at the bottom)
+
+   Pin 1  3.3V    [OLED VCC]   |  Pin 2  5V
+   Pin 3  SDA     [OLED SDA]   |  Pin 4  5V
+   Pin 5  SCL     [OLED SCL]   |  Pin 6  GND  [OLED GND]
+   Pin 7  GPIO 4               |  Pin 8  GPIO 14
+   Pin 9  GND     [BUTTON]     |  Pin 10 GPIO 15
+   Pin 11 GPIO 17 [BUTTON]     |  Pin 12 GPIO 18
+```
+
+**Optional protection resistor:** 330 Ohm to 1 kOhm in series with the yellow wire (330 Ohm bands: orange, orange, brown, gold; 1 kOhm bands: brown, black, red, gold). Not required.
+
+> **Safety:** the button must only connect GPIO 17 to **GND**. Never connect a GPIO pin to the 5V pins (2 and 4): GPIO pins are 3.3 V only.
+
+**Software:** nothing to configure. The needed packages are installed in steps 1 and 5 (`swig`, `liblgpio-dev`, `gpiozero`, `lgpio`). When the program starts you should see:
+
+```
+-> Push button ready on GPIO 17: hold it to talk
+```
+
+To use another pin run with `BUTTON_GPIO=27` (BCM number), or `BUTTON_GPIO=0` to turn the button off. If the GPIO library cannot be installed, the program still works with the keyboard and prints `Push button: OFF`.
+
+**Alternative without the GPIO library:** add this line at the end of `/boot/firmware/config.txt` and reboot. The Pi then makes the button behave like the E key, and the program reads it like a keyboard (no library needed):
+
+```
+dtoverlay=gpio-key,gpio=17,active_low=1,gpio_pull=up,label=ptt,keycode=18
+```
+
+Do not use both methods at once.
+
 ## Installation, step by step
 
 ### 1. Update the system and install system packages
@@ -68,9 +115,10 @@ It answers general questions like any chatbot, and it also knows about the **Ins
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y python3-venv python3-pip python3-dev build-essential git \
-                    mpg123 alsa-utils i2c-tools fonts-dejavu-core
+                    mpg123 alsa-utils i2c-tools fonts-dejavu-core swig liblgpio-dev
 ```
 
+- `swig` and `liblgpio-dev` are only needed to build the GPIO library for the optional push button.
 - `mpg123` decodes the speech audio, `alsa-utils` provides `aplay` and `arecord`, `i2c-tools` is for checking the screen, and `fonts-dejavu-core` gives the OLED a readable font.
 
 ### 2. Enable I2C (for the OLED)
@@ -113,7 +161,7 @@ Your prompt now starts with `(venv)`. Every time you open a new terminal, run `s
 pip install -r requirements.txt
 ```
 
-This installs: `numpy`, `Pillow` (drawing on the OLED), `smbus2` (talking to the OLED), `groq` (speech recognition and optional cloud LLM), `gTTS` (text to speech), `ollama` (local LLM client) and `evdev` (reading the push-to-talk key).
+This installs: `numpy`, `Pillow` (drawing on the OLED), `smbus2` (talking to the OLED), `groq` (speech recognition and optional cloud LLM), `gTTS` (text to speech), `ollama` (local LLM client) and `evdev` (reading the push-to-talk key), and `gpiozero` + `lgpio` (reading the optional push button; the build takes a minute or two).
 
 ### 6. Install Ollama and download the local model
 
@@ -192,8 +240,8 @@ At startup you should see lines like:
 
 | Action | What it does |
 |---|---|
-| Hold **E**, speak, release | Ask a question |
-| Press **E** while it is speaking | Interrupts the answer and starts listening |
+| Hold **E** (or the button), speak, release | Ask a question |
+| Press **E** (or the button) while it is speaking | Interrupts the answer and starts listening |
 | Say "new conversation" or "clear the memory" | Resets the conversation memory |
 | **Ctrl + C** | Exits cleanly (the OLED is cleared) |
 
@@ -233,7 +281,8 @@ For information that is not in the file, the assistant is told to say it doesn't
 | `MIC_DEVICE` | Force a microphone, e.g. `plughw:1,0` |
 | `SPEAKER_DEVICE` | Force a speaker, e.g. `plughw:2,0` |
 | `KNOWLEDGE_FILE` | Use a different knowledge file |
-| `KEY_DEBUG=1` | Print every E key press/release (to debug the keyboard) |
+| `KEY_DEBUG=1` | Print every E key and button press/release (to debug) |
+| `BUTTON_GPIO` | GPIO number of the push button (default `17`; `0` turns the button off) |
 
 **Settings at the top of `isiassistant.py`:**
 
@@ -287,6 +336,7 @@ journalctl -u isi-assistant -f        # watch the log
 |---|---|
 | `GROQ_API_KEY not found` | Check that `.env` is in the same folder as `isiassistant.py` and contains `GROQ_API_KEY=your_key` (no spaces around `=`) |
 | OLED stays blank | Run `sudo i2cdetect -y 1` (you should see `3c`). Check wiring and that I2C is enabled |
+| The push button does nothing | At start-up you must see `-> Push button ready on GPIO 17`. If it says `OFF`, the GPIO library is missing: `pip install gpiozero lgpio` (needs `swig` and `liblgpio-dev`). Then run with `KEY_DEBUG=1`: pressing the button must print `[Button pressed]`. If not, recheck the wiring (pin 11 and pin 9) |
 | Nothing happens when I press E | Run with `KEY_DEBUG=1`. If no lines appear, use `sudo -E` or check the keyboard is the one plugged in |
 | "No microphone found - plug it in" | Check `arecord -l`. If your mic has an unusual name, set `MIC_DEVICE=plughw:CARD=<name>,DEV=0` |
 | "Microphone stalled - restarting it..." often | USB power or bandwidth. Use a **powered USB hub** |
